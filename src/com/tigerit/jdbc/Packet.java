@@ -6,18 +6,24 @@ package com.tigerit.jdbc;
 public class Packet {
 
     private String key;
-    private String value;
+    private byte[] bigArr;
+    private byte[] shortArr;
 
-    public Packet(String key,String value) {
+    public Packet(String key, byte[] bigArr, byte[] shortArr) {
         this.key = key;
-        this.value = value;
+        this.bigArr = bigArr;
+        this.shortArr = shortArr;
     }
 
     public String getKey() {
         return key;
     }
 
-    public String getValue() {
-        return value;
+    public byte[] getBigArr() {
+        return bigArr;
+    }
+
+    public byte[] getShortArr() {
+        return shortArr;
     }
 }

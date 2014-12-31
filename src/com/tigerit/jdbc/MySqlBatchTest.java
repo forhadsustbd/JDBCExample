@@ -1,11 +1,9 @@
 package com.tigerit.jdbc;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
 
@@ -39,8 +37,11 @@ public class MySqlBatchTest {
         this.urlMysqlDB = properties.getProperty("mysql.url");
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             this.connection = DriverManager.getConnection(urlMysqlDB, userName, passWord);
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -61,14 +62,19 @@ public class MySqlBatchTest {
     private void tableCreate(String tableNameDB) {
         String sql;
 
+        sql = "DROP TABLE IF EXISTS "+tableNameDB+" ;";
+        execute(sql);
+
         sql="CREATE TABLE IF NOT EXISTS "+tableNameDB+" (\n" +
                 "  DB_KEY VARCHAR(60) PRIMARY KEY NOT NULL ,\n" +
-                "  DB_VALUE VARCHAR(25000) NOT NULL\n" +
+                "  DATA_BLOB BLOB NOT NULL,\n" +
+                "  DATA_ARRAY BINARY(200) NOT NULL\n" +
                 ") ENGINE=InnoDB;";
         execute(sql);
     }
 
     public boolean execute(String sqlStatement) {
+        System.out.println("sqlStatement = " + sqlStatement);
         Statement statement = null;
         boolean val = false;
         try {
@@ -90,17 +96,19 @@ public class MySqlBatchTest {
 
     public boolean putBatch(ArrayList<Packet> packetList) {
 
-        String insertSql = "INSERT INTO "+tableName + " (DB_KEY,DB_VALUE) VALUES (?,?);";
+        String insertSql = "INSERT INTO "+tableName + " (DB_KEY,DATA_BLOB,DATA_ARRAY) VALUES (?,?,?);";
         try {
             connection.setAutoCommit(false);
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
 
             for (int i = 0; i < packetList.size(); i++) {
                 String key = packetList.get(i).getKey();
-                String value = packetList.get(i).getValue();
+                byte[] bigArr = packetList.get(i).getBigArr();
+                byte[] shortArr = packetList.get(i).getShortArr();
 
-                preparedStatement.setString(1,key);
-                preparedStatement.setString(2,value);
+                preparedStatement.setString(1, key);
+                preparedStatement.setBinaryStream(2, new ByteArrayInputStream(bigArr),bigArr.length);
+                preparedStatement.setBytes(3,shortArr);
                 preparedStatement.addBatch();
             }
             //New Key
@@ -113,27 +121,52 @@ public class MySqlBatchTest {
         }
     }
 
+    public Packet getPacket(int serial) {
+        String selectSql = "SELECT * from "+tableName + " WHERE DB_KEY=?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(selectSql);
+            preparedStatement.setString(1,serial+"");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                String key = resultSet.getString(1);
+                Blob blob = resultSet.getBlob(2);
+                byte[] bigArr = blob.getBytes(1L,(int)blob.length());
+                byte[] shortArr = resultSet.getBytes(3);
+                Packet packet = new Packet(key,bigArr,shortArr);
+                return packet;
+            } else {
+                System.out.println("serial = " + serial+" not found");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     public static void main(String[] args) {
 
-        MySqlBatchTest mySqlBatchTest = new MySqlBatchTest("batchTable","props/credential.properties");
-        Random random = new Random();
-        StringBuilder stringBuilder = new StringBuilder();
-        int valueSize = 20000;
+        MySqlBatchTest mySqlBatchTest = new MySqlBatchTest("test","props/credential.properties");
 
-        for (int i = 0; i < valueSize; i++) {
-            stringBuilder.append('a');
-        }
-        System.out.println(stringBuilder.toString().getBytes().length);
+        Random random = new Random();
         int serial = 1;
-        int batchSize = 1000;
-        for (int i = 0; i < 100;i++) {
+        int batchSize = 100;
+        int test = 1000;
+        int dataSize = 20000;
+
+        byte[] bigArr = new byte[dataSize];
+        random.nextBytes(bigArr);
+        byte[] shortArr = new byte[200];
+        random.nextBytes(shortArr);
+
+        long pStartTime = System.currentTimeMillis();
+
+        for (int i = 0; i < test;i++) {
             ArrayList<Packet> packets = new ArrayList<Packet>();
             for (int j = 0; j < batchSize; j++) {
                 String key = serial+"";
-                String value = stringBuilder.toString();
-                packets.add(new Packet(key,value));
+
+                packets.add(new Packet(key,bigArr,shortArr));
                 serial++;
             }
             long startTime = System.currentTimeMillis();
@@ -142,6 +175,25 @@ public class MySqlBatchTest {
             double time = (endTime-startTime)/1000.0;
             System.out.println("time = " + time);
             System.out.println(i);
+        }
+        long pEndTime = System.currentTimeMillis();
+        double time = (pEndTime - pStartTime)/1000.0;
+        System.out.println("Total time = " + time);
+        System.out.println("Totatl Insert : "+(serial-1));
+        for (int i = 1; i < serial; i++) {
+            Packet packet = mySqlBatchTest.getPacket(i);
+            String key = packet.getKey();
+            byte[] tempBig = packet.getBigArr();
+            byte[] tempShort = packet.getShortArr();
+            if(!Arrays.equals(bigArr,tempBig)) {
+                System.out.println("Error Big Arr");
+                break;
+            }
+
+            if(!Arrays.equals(shortArr,tempShort)) {
+                System.out.println("Error Short Arr");
+                break;
+            }
         }
 
     }
