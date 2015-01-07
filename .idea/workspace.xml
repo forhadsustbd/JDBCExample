@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="242d1237-ac4f-46f2-8b80-4a6002e90a4a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/JDBCExample.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.34-bin.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JDBCExample.iml" afterPath="$PROJECT_DIR$/JDBCExample.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java" afterPath="$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java" afterPath="$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/props/credential.properties" afterPath="$PROJECT_DIR$/props/credential.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java" afterPath="$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JDBCExample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +30,11 @@
       <file leaf-file-name="MySqlBatchTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21333334" vertical-offset="1810" max-vertical-offset="3015">
-              <caret line="131" column="25" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.5133333" vertical-offset="2467" max-vertical-offset="3090">
+              <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
               <folding>
-                <marker date="1420011258108" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
-                <marker date="1420011258108" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+                <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+                <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
               </folding>
             </state>
           </provider>
@@ -54,13 +43,9 @@
       <file leaf-file-name="Packet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="525">
               <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,12 +53,21 @@
       <file leaf-file-name="OracleBatchTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1895" max-vertical-offset="2625">
-              <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1312" max-vertical-offset="2520">
+              <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1420008693176" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+                <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Statement.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/sql/Statement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8298" max-vertical-offset="20235">
+              <caret line="589" column="10" selection-start-line="589" selection-start-column="10" selection-end-line="589" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +75,7 @@
       <file leaf-file-name="MySqlKeyValue.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlKeyValue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="2670">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2745">
               <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
               <folding>
                 <marker date="1419253523276" expanded="true" signature="2499:2541" placeholder="SELECT * fro..missingValue..." />
@@ -107,9 +101,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/props/credential.properties" />
-        <option value="$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java" />
         <option value="$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java" />
+        <option value="$PROJECT_DIR$/props/vm_options.properties" />
         <option value="$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java" />
+        <option value="$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java" />
       </list>
     </option>
   </component>
@@ -147,8 +142,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,6 +222,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,8 +288,8 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.tigerit.jdbc.MySqlBatchTest" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-Xmx1024m" />
+      <option name="VM_PARAMETERS" value="-ea -Xms768m -Xmx768m -Xss512m -Djava.net.preferIPv4Stack=true -XX:MaxPermSize=768m -XX:ReservedCodeCacheSize=64m -server -XX:NewSize=256m -XX:+UseParNewGC -XX:ParallelGCThreads=8 -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=60" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -547,28 +542,28 @@
       <workItem from="1419937780515" duration="1029000" />
       <workItem from="1419938860377" duration="6136000" />
       <workItem from="1419952723205" duration="29000" />
-      <workItem from="1420004697683" duration="6650000" />
+      <workItem from="1420004697683" duration="9724000" />
+      <workItem from="1420627861819" duration="1653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13844000" />
+    <option name="totallyTimeSpent" value="18571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33014354" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35885167" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7751196" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -582,6 +577,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33014354" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -614,11 +610,61 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3090">
+          <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+          <folding>
+            <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+            <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/props/vm_options.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="270">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="525">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1895" max-vertical-offset="2625">
+          <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
+          <folding>
+            <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlKeyValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="2745">
+          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+          <folding>
+            <marker date="1419253523276" expanded="true" signature="2499:2541" placeholder="SELECT * fro..missingValue..." />
+            <marker date="1419253523276" expanded="true" signature="3440:3498" placeholder="INSERT INTO ..." />
+            <marker date="1419253523276" expanded="true" signature="3530:3590" placeholder="UPDATE missi..." />
+            <marker date="1419253523276" expanded="true" signature="4514:4563" placeholder="SELECT DB_VA..missingValue..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
           <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
-            <marker date="1420011258108" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
-            <marker date="1420011258108" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+            <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+            <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
           </folding>
         </state>
       </provider>
@@ -628,8 +674,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1383" max-vertical-offset="2610">
           <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1420008693176" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+            <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -662,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="645">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,8 +722,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="2310">
           <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
-            <marker date="1420011258108" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
-            <marker date="1420011258108" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+            <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+            <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
           </folding>
         </state>
       </provider>
@@ -690,8 +733,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2610">
           <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1420008693176" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+            <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -724,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,8 +781,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="58" max-vertical-offset="2310">
           <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
-            <marker date="1420011258108" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
-            <marker date="1420011258108" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+            <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+            <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
           </folding>
         </state>
       </provider>
@@ -752,8 +792,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1608" max-vertical-offset="2295">
           <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1420008693176" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+            <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -765,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="645">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,15 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="645">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/sql/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8385" max-vertical-offset="20235">
-          <caret line="589" column="10" selection-start-line="589" selection-start-column="10" selection-end-line="589" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,26 +847,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1895" max-vertical-offset="2625">
-          <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1420008693176" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="495">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -856,13 +868,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/sql/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8385" max-vertical-offset="20235">
+          <caret line="589" column="10" selection-start-line="589" selection-start-column="10" selection-end-line="589" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/OracleBatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1312" max-vertical-offset="2520">
+          <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
+          <folding>
+            <marker date="1420627944083" expanded="true" signature="2876:2934" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/props/vm_options.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25951558" vertical-offset="0" max-vertical-offset="578">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tigerit/jdbc/MySqlBatchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21333334" vertical-offset="1810" max-vertical-offset="3015">
-          <caret line="131" column="25" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.5133333" vertical-offset="2467" max-vertical-offset="3090">
+          <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
           <folding>
-            <marker date="1420011258108" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
-            <marker date="1420011258108" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
+            <marker date="1420028782473" expanded="true" signature="2851:2923" placeholder="INSERT INTO ..." />
+            <marker date="1420028782473" expanded="true" signature="3927:3971" placeholder="SELECT * fro..missingValue..." />
           </folding>
         </state>
       </provider>

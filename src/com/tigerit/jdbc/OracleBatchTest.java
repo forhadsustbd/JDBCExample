@@ -133,7 +133,7 @@ public class OracleBatchTest {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        OracleBatchTest mySqlBatchTest = new OracleBatchTest("test","props/credential.properties");
+        OracleBatchTest oracleBatchTest = new OracleBatchTest("test","props/credential.properties");
 
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder();
@@ -154,7 +154,7 @@ public class OracleBatchTest {
                 serial++;
             }
             long startTime = System.currentTimeMillis();
-            mySqlBatchTest.putBatch(packets);
+            oracleBatchTest.putBatch(packets);
             long endTime = System.currentTimeMillis();
             double time = (endTime-startTime)/1000.0;
             System.out.println("time = " + time);
@@ -163,7 +163,7 @@ public class OracleBatchTest {
 
         }
 
-        mySqlBatchTest.shutdown();
+        oracleBatchTest.shutdown();
 
     }
 }

@@ -152,7 +152,7 @@ public class MySqlBatchTest {
         int serial = 1;
         int batchSize = 100;
         int test = 1000;
-        int dataSize = 20000;
+        int dataSize = 20;
 
         byte[] bigArr = new byte[dataSize];
         random.nextBytes(bigArr);
@@ -181,10 +181,15 @@ public class MySqlBatchTest {
         System.out.println("Total time = " + time);
         System.out.println("Totatl Insert : "+(serial-1));
         for (int i = 1; i < serial; i++) {
+            if(i%100 == 0) System.out.println("i = " + i);
             Packet packet = mySqlBatchTest.getPacket(i);
             String key = packet.getKey();
             byte[] tempBig = packet.getBigArr();
             byte[] tempShort = packet.getShortArr();
+            if(!key.equals(i+"")) {
+                System.out.println("Key Not Matched");
+                break;
+            }
             if(!Arrays.equals(bigArr,tempBig)) {
                 System.out.println("Error Big Arr");
                 break;
