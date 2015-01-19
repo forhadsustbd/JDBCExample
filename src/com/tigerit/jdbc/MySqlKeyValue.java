@@ -60,8 +60,8 @@ public class MySqlKeyValue {
         String sql;
 
         sql="CREATE TABLE IF NOT EXISTS "+tableName+" (\n" +
-                "  DB_KEY VARCHAR(25) PRIMARY KEY NOT NULL ,\n" +
-                "  DB_VALUE VARCHAR(25) NOT NULL\n" +
+                "  DB_KEY VARCHAR(25) PRIMARY KEY NOT NULL,\n" +
+                "  DB_VALUE VARCHAR(25) NOT NULL \n" +
                 ") ENGINE=InnoDB;";
         execute(sql);
     }
@@ -97,6 +97,7 @@ public class MySqlKeyValue {
             preparedStatement.setString(1,key);
             resultSet = preparedStatement.executeQuery();
             if(resultSet.next()) val = true;
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -117,6 +118,7 @@ public class MySqlKeyValue {
 
     public boolean put(String key, String value) {
         boolean chk = find(key);
+        //boolean chk = false;
         String insertSql = "INSERT INTO "+tableName + " (DB_KEY,DB_VALUE) VALUES (?,?);";
         String updateSql = "UPDATE "+tableName+" set DB_KEY=?, DB_VALUE=? WHERE DB_KEY=?;";
 
@@ -127,6 +129,7 @@ public class MySqlKeyValue {
                 preparedStatement.setString(1,key);
                 preparedStatement.setString(2,value);
                 preparedStatement.executeUpdate();
+                preparedStatement.close();
                 return true;
             } else {
                 //Update Key
@@ -135,11 +138,27 @@ public class MySqlKeyValue {
                 preparedStatement.setString(2,value);
                 preparedStatement.setString(3,key);
                 preparedStatement.executeUpdate();
+                preparedStatement.close();
                 return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public void put(int key, int value) {
+        String insertSql = "INSERT INTO "+tableName + " (DB_KEY,DB_VALUE) VALUES (?,?);";
+
+        try {
+            //New Key
+            PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
+            preparedStatement.setInt(1,key);
+            preparedStatement.setInt(2,value);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
