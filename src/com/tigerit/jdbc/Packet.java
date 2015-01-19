@@ -5,25 +5,26 @@ package com.tigerit.jdbc;
  */
 public class Packet {
 
-    private String key;
-    private byte[] bigArr;
-    private byte[] shortArr;
+    private int key, value;
 
-    public Packet(String key, byte[] bigArr, byte[] shortArr) {
+    public Packet(int key, int value) {
         this.key = key;
-        this.bigArr = bigArr;
-        this.shortArr = shortArr;
+        this.value = value;
     }
 
-    public String getKey() {
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getKey() {
         return key;
     }
 
-    public byte[] getBigArr() {
-        return bigArr;
-    }
-
-    public byte[] getShortArr() {
-        return shortArr;
+    public void setKey(int key) {
+        this.key = key;
     }
 }

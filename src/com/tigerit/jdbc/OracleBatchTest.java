@@ -100,17 +100,19 @@ public class OracleBatchTest {
 
     public boolean putBatch(ArrayList<Packet> packetList) {
 
-        String insertSql = "INSERT INTO "+tableName + " (DB_KEY,DB_VALUE) VALUES (?,?)";
+        String insertSql = "INSERT INTO "+tableName + " (serial, serial_version) VALUES (?,?)";
         try {
             connection.setAutoCommit(false);
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
 
             for (int i = 0; i < packetList.size(); i++) {
-                String key = packetList.get(i).getKey();
+                int key = packetList.get(i).getKey();
+                int version = packetList.get(i).getValue();
+
                 //String value = packetList.get(i).getValue();
 
-                preparedStatement.setString(1,key);
-                //preparedStatement.setString(2,value);
+                preparedStatement.setInt(1,key);
+                preparedStatement.setInt(2, version);
                 //preparedStatement.setBytes();setBinaryStream();
                 preparedStatement.addBatch();
             }
@@ -124,6 +126,24 @@ public class OracleBatchTest {
         }
     }
 
+    public void getCount(int low,int high) {
+        String getSelectSql = "SELECT * FROM "+tableName+" WHERE SERIAL >= ? AND SERIAL <= ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(getSelectSql);
+            preparedStatement.setInt(1,low);
+            preparedStatement.setInt(2,high);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()) {
+                int serial = resultSet.getInt(1);
+                int version = resultSet.getInt(2);
+                //System.out.println("serial: "+serial+" version = " + version);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -133,34 +153,38 @@ public class OracleBatchTest {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        OracleBatchTest oracleBatchTest = new OracleBatchTest("test","props/credential.properties");
+        OracleBatchTest oracleBatchTest = new OracleBatchTest("version_table","props/credential.properties");
 
-        Random random = new Random();
-        StringBuilder stringBuilder = new StringBuilder();
-        int valueSize = 200;
-
-        for (int i = 0; i < valueSize; i++) {
-            stringBuilder.append('a');
-        }
-        System.out.println(stringBuilder.toString().getBytes().length);
-        int serial = 1;
-        int batchSize = 1;
-        for (int i = 0; i < 100;i++) {
+        /*int serial = 1;
+        int batchSize = 1000000;
+        int M = 200;
+        for (int i = 0; i < M;i++) {
             ArrayList<Packet> packets = new ArrayList<Packet>();
             for (int j = 0; j < batchSize; j++) {
-                String key = serial+"";
-                String value = stringBuilder.toString();
-                //packets.add(new Packet(key,value));
+                packets.add(new Packet(serial,serial));
                 serial++;
             }
             long startTime = System.currentTimeMillis();
             oracleBatchTest.putBatch(packets);
             long endTime = System.currentTimeMillis();
-            double time = (endTime-startTime)/1000.0;
-            System.out.println("time = " + time);
-            System.out.println(i);
+            double time = (endTime - startTime)/1000.0;
+            System.out.println(i+" >  time: " + time);
+            System.out.println("i = " + i);
+        }*/
 
 
+
+        int start = 1;
+        for(int i=0;i<100;i++) {
+            int end = start+100000;
+
+            long startTime = System.currentTimeMillis();
+            oracleBatchTest.getCount(start,end);
+            long endTime = System.currentTimeMillis();
+            double time = (endTime - startTime)/1000.0;
+            System.out.println(i+" >  time: " + time);
+
+            start = end + 1;
         }
 
         oracleBatchTest.shutdown();
