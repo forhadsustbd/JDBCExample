@@ -61,7 +61,7 @@ public class MySqlKeyValue {
 
         sql="CREATE TABLE IF NOT EXISTS "+tableName+" (\n" +
                 "  DB_KEY VARCHAR(25) PRIMARY KEY NOT NULL,\n" +
-                "  DB_VALUE VARCHAR(25) NOT NULL \n" +
+                "  DB_VALUE VARCHAR(1024) NOT NULL \n" +
                 ") ENGINE=InnoDB;";
         execute(sql);
     }
@@ -174,6 +174,7 @@ public class MySqlKeyValue {
             if(resultSet.next()){
                 value = resultSet.getString(1);
             }
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
