@@ -10,7 +10,7 @@ public class TestMySqlKeyValue {
         MySqlKeyValue mySqlKeyValue = new MySqlKeyValue("testing","props/credential.properties");
 
         long prevTime = System.currentTimeMillis();
-        int N = 10000000;
+        int N = 100000000;
         for (int i = 1; i <= N; i++) {
             if(i%10000 == 0) {
                 long curTime = System.currentTimeMillis();
