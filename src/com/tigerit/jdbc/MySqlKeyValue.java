@@ -60,8 +60,9 @@ public class MySqlKeyValue {
         String sql;
 
         sql="CREATE TABLE IF NOT EXISTS "+tableName+" (\n" +
-                "  DB_KEY VARCHAR(25) PRIMARY KEY NOT NULL,\n" +
-                "  DB_VALUE VARCHAR(1024) NOT NULL \n" +
+                " DB_VALUE VARCHAR(1024) NOT NULL, \n" +
+                " DB_KEY INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY"+
+
                 ") ENGINE=InnoDB;";
         execute(sql);
     }
@@ -141,6 +142,21 @@ public class MySqlKeyValue {
                 preparedStatement.close();
                 return true;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean add(String value) {
+        String insertSql = "INSERT INTO "+tableName + " (DB_VALUE) VALUES (?);";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
+            preparedStatement.setString(1,value);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

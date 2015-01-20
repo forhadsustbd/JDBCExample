@@ -28,7 +28,7 @@ public class TestMySqlKeyValue {
                 System.out.println("time = " + time);
                 prevTime = curTime;
             }
-            mySqlKeyValue.put(i+"",str.toString());
+            mySqlKeyValue.add(str.toString());
         }
 
         /*for (int i = 1; i <= N; i++) {
